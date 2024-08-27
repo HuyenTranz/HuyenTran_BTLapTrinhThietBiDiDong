@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 3</title>
+
+    <script>
+        // Test data:
+        // Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+        let Dolphins_data1 = [96, 108, 89];
+        let Koalas_data1 = [88, 91, 110];
+
+        const average_score = (arr) => {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+            let average = sum / arr.length
+            return average;
+        }
+
+        let dolphinsAvg1 = average_score(Dolphins_data1);
+        let koalasAvg1 = average_score(Koalas_data1);
+
+        console.log(`Data1: \n Dolphins: ${dolphinsAvg1} \n Koalas: ${koalasAvg1}`);
+
+        if (dolphinsAvg1 > koalasAvg1) {
+            console.log(`Dolphins (${dolphinsAvg1.toFixed(1)}) win a trophy!`);
+        } else if (dolphinsAvg1 < koalasAvg1) {
+            console.log(`Koalas (${koalasAvg1.toFixed(1)}) win a trophy!`);
+        } else if (dolphinsAvg1 == koalasAvg1) {
+            console.log(`Both teams have the same average score (${koalasAvg1.toFixed(1)})!`);
+        }
+
+        // Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+        let Dolphins_dataBonus1 = [97, 112, 101];
+        let Koalas_dataBonus1 = [109, 95, 123];
+
+        let dolphinsAvgBonus1 = average_score(Dolphins_dataBonus1);
+        let koalasAvgBonus1 = average_score(Koalas_dataBonus1);
+
+        console.log(`Data Bonus 1: \n Dolphins: ${dolphinsAvgBonus1} \n Koalas: ${koalasAvgBonus1}`);
+
+        console.log(`Include a requirement for a minimum score of 100`);
+        if (dolphinsAvgBonus1 > koalasAvgBonus1 && dolphinsAvgBonus1 >= 100) {
+            console.log(`Dolphins (${dolphinsAvgBonus1.toFixed(1)}) win a trophy!`);
+        } else if (koalasAvgBonus1 > dolphinsAvgBonus1 && koalasAvgBonus1 >= 100) {
+            console.log(`Koalas (${koalasAvgBonus1.toFixed(1)}) win a trophy!`);
+        } else {
+            console.log(`No team wins the trophy.`);
+        }
+
+        // Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+        let Dolphins_dataBonus2 = [97, 112, 101];
+        let Koalas_dataBonus2 = [109, 95, 106];
+
+        let dolphinsAvgBonus2 = average_score(Dolphins_dataBonus2);
+        let koalasAvgBonus2 = average_score(Koalas_dataBonus2);
+
+        console.log(`Data Bonus 2: \n Dolphins: ${dolphinsAvgBonus2} \n Koalas: ${koalasAvgBonus2}`);
+        console.log(`So a draw only happens when both teams have the same score and both have a score greater or equal 100 points. Otherwise, no team wins the trophy`)
+        if (dolphinsAvgBonus2 > koalasAvgBonus2 && dolphinsAvgBonus2 >= 100) {
+            console.log(`Dolphins (${dolphinsAvgBonus2.toFixed(1)}) win a trophy!`);
+        } else if (koalasAvgBonus2 > dolphinsAvgBonus2 && koalasAvgBonus2 >= 100) {
+            console.log(`Koalas (${koalasAvgBonus2.toFixed(1)}) win a trophy!`);
+        } else if (dolphinsAvgBonus2 == koalasAvgBonus2 && dolphinsAvgBonus2 >= 100) {
+            console.log(`Both teams have the same average score (${dolphinsAvgBonus2.toFixed(1)}) and win a trophy!`);
+        } else {
+            console.log(`No team wins the trophy.`);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
