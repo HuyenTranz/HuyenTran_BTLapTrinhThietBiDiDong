@@ -14,5 +14,18 @@ var map = options.myMap((item) => {
 });
 console.log(`map: ${map}`);
 
+// Filter
+var filterArr = ["apple", "orange", "banana", "mango"];
+Array.prototype.myFilter = function (callback) {	
+    var newFilter = [];
+    for (var i = 0; i < this.length; i++) {
+        if(callback(this[i]).length > 5)
+            newFilter.push(this[i]);
+    }
+    return newFilter;
+}
 
-
+var filterArr1 = filterArr.myFilter((item) =>{
+    return item;
+})
+console.log(filterArr1);
