@@ -29,3 +29,6 @@ var filterArr1 = filterArr.myFilter((item) =>{
     return item;
 })
 console.log(filterArr1);
+
+
+// find
