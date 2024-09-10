@@ -68,9 +68,8 @@ const styles = StyleSheet.create({
   btns: {
     flex: 1,
     marginTop: 94,
-    padding: 34,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
 
