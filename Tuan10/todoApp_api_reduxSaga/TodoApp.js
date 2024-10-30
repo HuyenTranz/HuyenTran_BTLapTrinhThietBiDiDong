@@ -6,23 +6,22 @@ import { View, Text, TextInput, Button, FlatList, TouchableOpacity, StyleSheet }
 const TodoApp = () => {
   const [newTodo, setNewTodo] = useState('');
   const dispatch = useDispatch();
-  const todos = useSelector(state => state.todos.list);
+  const todos = useSelector(state => state.todos.list); // Lấy danh sách todos từ Redux store
 
-  // Gọi API khi component được khởi tạo để tải danh sách todo
   useEffect(() => {
-    dispatch({ type: 'FETCH_TODOS_REQUEST' });
+    dispatch({ type: 'FETCH_TODOS_REQUEST' }); // Gọi API để lấy todos khi component được khởi tạo
   }, [dispatch]);
 
   const handleAddTodo = () => {
     if (newTodo.trim()) {
-      const newTodoObj = { id: Math.random(), title: newTodo, completed: false };
-      dispatch({ type: 'ADD_TODO', payload: newTodoObj });
+      const newTodoObj = { id: Math.random().toString(), name: newTodo, completed: false };
+      dispatch({ type: 'ADD_TODO', payload: newTodoObj }); // Thêm todo mới
       setNewTodo('');
     }
   };
 
   const handleDeleteTodo = (todo) => {
-    dispatch({ type: 'DELETE_TODO', payload: todo });
+    dispatch({ type: 'DELETE_TODO', payload: todo }); // Xóa todo
   };
 
   return (
@@ -40,7 +39,7 @@ const TodoApp = () => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.todoItem}>
-            <Text style={styles.todoText}>{item.title}</Text>
+            <Text style={styles.todoText}>{item.name}</Text> {/* Hiển thị tên todo */}
             <TouchableOpacity onPress={() => handleDeleteTodo(item)}>
               <Text style={styles.deleteButton}>Delete</Text>
             </TouchableOpacity>
@@ -51,6 +50,7 @@ const TodoApp = () => {
   );
 };
 
+// Styles (giữ nguyên như trước)
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -5,7 +5,7 @@ import axios from 'axios';
 // Hàm gọi API để lấy danh sách todo
 function* fetchTodos() {
   try {
-    const response = yield call(axios.get, 'https://jsonplaceholder.typicode.com/todos');
+    const response = yield call(axios.get, 'https://6457d9490c15cb1482127b2e.mockapi.io/api/cau1/todoApp');
     yield put({ type: 'SET_TODOS', payload: response.data });
   } catch (error) {
     console.error('Error fetching todos:', error);
